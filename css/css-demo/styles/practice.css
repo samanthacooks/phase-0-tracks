@@ -1,0 +1,30 @@
+#contact-info {
+    font-size: 0.8em;
+}
+
+.job {
+    background-color: #e9e5dc;
+    border-radius: 20px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+ul.experience {
+    font-size: 0.8em;
+}
+
+p {
+    color: black;
+}
+
+
+/*:not(selector) if selector not pre-defined, and :not selectors a parent element*/
+/*of selector, selector will also inherit rule.*/
+:not(p) {
+    color: gray;
+}
+
+ul li:nth-child(3) {
+    font-weight: bold;
+}
