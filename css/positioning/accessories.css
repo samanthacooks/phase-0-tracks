@@ -1,6 +1,30 @@
-.Leslie {
- margin-left: 150px;
+html {
+  background: palegreen;
+}
+
+p {
+  font-family: Georgia;
+  font-size: 40px;
+  color: purple;
+  margin-left: 375px
+}
+
+
+div.Leslie {
+ margin-left: 500px;
  margin-right: 150px;
- margin-top: 20px;
+ margin-top: 150px;
  margin-bottom: 50px;
+}
+
+div.face {
+  position: absolute;
+  left: 550px;
+  top: 336px;
+}
+
+div.head {
+  position: absolute;
+  left: 485px;
+  top: 170px
 }
