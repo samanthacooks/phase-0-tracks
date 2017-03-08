@@ -6,7 +6,22 @@ Teaching My Robot How to Use the Elevator
 - Stand back and quietly ride elevator:
     - Until elevator reaches floor (n). 
     - If floor (n) is never reached, contact the nearest human to inquire if elevator is malfunctioning. 
-      -If elevator is operating correctly, confirm floor (n) button is selected on control panel.
+       - Otherwise, if elevator is operating correctly, confirm floor (n) button is selected on control panel.
 - Once floor (n) is reached, step off of elevator. 
 
 
+Brushing Teeth After Every Meal
+- Locate closest (clean) restroom sink. 
+- Turn on faucet. 
+- Place hand under water faucet to collect a handful of water (~3oz).
+    - Put water in mouth and swish briefly (~30 seconds).
+- Floss between each tooth using string of floss gathered around both pointer fingers.
+    - Collect and swish water once again (~15 seconds).
+- Pick up tooth brush.
+    - Wet toothbrush and add toothpaste.
+- Place toothbrush in mouth and rotate across teeth.
+    - Until 2 minutes has passed and all teeth have been brushed, in and out.
+    - If mouth started off particularly stinky, keep brushing until stink is gone at the minimum of 2.5 minutes.
+    - Otherwise, remove tooth brush from mouth after 2 minutes.
+- Collect and swish water for final time (~15 seconds).
+- Smile with your new fresh mouth.
