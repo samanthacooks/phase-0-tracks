@@ -1,0 +1,12 @@
+Teaching My Robot How to Use the Elevator
+- Ask human which floor number should be selected (n).
+- Walk into elevator and locate control panel with numbered buttons.
+- Search control panel for floor number (n).
+- Select floor (n) button on control panel.
+- Stand back and quietly ride elevator:
+    - Until elevator reaches floor (n). 
+    - If floor (n) is never reached, contact the nearest human to inquire if elevator is malfunctioning. 
+      -If elevator is operating correctly, confirm floor (n) button is selected on control panel.
+- Once floor (n) is reached, step off of elevator. 
+
+
