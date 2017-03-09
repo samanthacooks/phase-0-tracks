@@ -27,8 +27,7 @@ current_year = 2017
 
 if 
   age = (current_year - birth_year) || age = (current_year - birth_year) - 1
-  && garlic_bread = "yes"
-  && insurance = "yes" 
+  && (garlic_bread = "yes" && insurance = "yes") 
   puts "Probably not a vampire."
 elsif
   age < (current_year - birth_year) || age > (current_year - birth_year)
@@ -36,11 +35,10 @@ elsif
   puts "Probably a vampire."
 elsif
   age < (current_year - birth_year) || age > (current_year - birth_year)
-  && garlic_bread = "no"
-  && insurance = "no"
+  && (garlic_bread = "no" && insurance = "no")
   puts "Almost certainly a vampire."
 elsif 
-  employee_name = "Drake Cula", "Tu Fang"
+  employee_name = "Drake Cula" "Tu Fang"
   puts "Definitely a vampire."
 else
   puts "Results inconclusive."
@@ -50,17 +48,14 @@ end
 puts "Please list all allergies. When complete, enter Done."
 allergies = gets.chomp
 
-if answer = "Sunshine"
+if answer == "Sunshine"
   puts "Probably a vampire."
 else
 until answer == "Done"
   puts "Please list all allergies."
 end
 
-
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 
 number_of_employees -= 1
 end
-
-
-puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
