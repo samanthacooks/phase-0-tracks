@@ -47,9 +47,20 @@ else
 end
 
 
+puts "Please list all allergies. When complete, enter Done."
+allergies = gets.chomp
+
+if answer = "Sunshine"
+  puts "Probably a vampire."
+else
+until answer == "Done"
+  puts "Please list all allergies."
+end
+
 
 
 number_of_employees -= 1
 end
 
 
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
