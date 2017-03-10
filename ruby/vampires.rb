@@ -13,7 +13,7 @@ puts "How old are you?"
 age = gets.chomp
 
 puts "What year were you born?"
-birth_year = gets.chomp
+birth_year = gets.chomp.to_i
 
 puts "Our cafeteria serves garlic bread. Should we order some for you? [yes/no]"
 garlic_bread = gets.chomp
@@ -26,19 +26,16 @@ puts "The employee's name is #{employee_name} and their age is #{age}, with the 
 current_year = 2017
 
 if 
-  age = (current_year - birth_year) || age = (current_year - birth_year) - 1
-  && (garlic_bread = "yes" && insurance = "yes") 
+  (age == (current_year - birth_year) || age == (current_year - birth_year) - 1) && (garlic_bread == "yes" || insurance == "yes") 
   puts "Probably not a vampire."
 elsif
-  age < (current_year - birth_year) || age > (current_year - birth_year)
-  && (garlic_bread = "no" || insurance = "no")
+  (age < (current_year - birth_year) || age > (current_year - birth_year)) && (garlic_bread == "no" || insurance == "no")
   puts "Probably a vampire."
 elsif
-  age < (current_year - birth_year) || age > (current_year - birth_year)
-  && (garlic_bread = "no" && insurance = "no")
+  (age < (current_year - birth_year) || age > (current_year - birth_year)) && (garlic_bread == "no" && insurance == "no")
   puts "Almost certainly a vampire."
 elsif 
-  employee_name = "Drake Cula" "Tu Fang"
+  employee_name == "Drake Cula" "Tu Fang"
   puts "Definitely a vampire."
 else
   puts "Results inconclusive."
@@ -48,14 +45,18 @@ end
 puts "Please list all allergies. When complete, enter Done."
 allergies = gets.chomp
 
-if answer == "Sunshine"
-  puts "Probably a vampire."
+if allergies == "Sunshine"
+  puts "Probably a vampire"
 else
-until answer == "Done"
+until allergies == "Done"
   puts "Please list all allergies."
+  allergies = gets.chomp
+end
+
+
+
+number_of_employees -= 1
 end
 
 puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
-
-number_of_employees -= 1
 end
