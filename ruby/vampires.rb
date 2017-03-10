@@ -2,15 +2,14 @@ puts "How many employees will be processed this session?"
 number_of_employees = gets.chomp
 
 
-number_of_employees = number_of_employees.to_i
-until number_of_employees == 0
+until number_of_employees.to_i == 0
 
 
 puts "What's your name?"
 employee_name = gets.chomp
 
 puts "How old are you?"
-age = gets.chomp
+age = gets.chomp.to_i
 
 puts "What year were you born?"
 birth_year = gets.chomp.to_i
@@ -29,7 +28,7 @@ if
   (age == (current_year - birth_year) || age == (current_year - birth_year) - 1) && (garlic_bread == "yes" || insurance == "yes") 
   puts "Probably not a vampire."
 elsif
-  (age < (current_year - birth_year) || age > (current_year - birth_year)) && (garlic_bread == "no" || insurance == "no")
+  (age < (current_year - birth_year) || age > (current_year - birth_year)) && (garlic_bread == "yes" || insurance == "yes")
   puts "Probably a vampire."
 elsif
   (age < (current_year - birth_year) || age > (current_year - birth_year)) && (garlic_bread == "no" && insurance == "no")
@@ -55,8 +54,14 @@ end
 
 
 
-number_of_employees -= 1
+number_of_employees = number_of_employees.to_i - 1
 end
 
+
+if number_of_employees == 0
 puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
+else
+  puts nil
+end
+
 end
