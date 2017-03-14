@@ -4,38 +4,40 @@
 # When there's more than one suspect who could have
 # committed the crime, add additional calls to prove it.
 
- "iNvEsTiGaTiOn".swapcase
-=> “InVeStIgAtIoN”
+"iNvEsTiGaTiOn".swapcase
+#=> “InVeStIgAtIoN”
 
-"Sam".swapcase
 
-# "zom".<???>
+ "zom".squeeze("zoom")
 # => “zoom”
 
-# "enhance".<???>
+"enhance".lstrip!
+"enhance".rstrip!
 # => "    enhance    "
 
-# "Stop! You’re under arrest!".<???>
+"Stop! You’re under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
 
-# "the usual".<???>
+
+"the usual".chomp!("suspects")
 #=> "the usual suspects"
 
-# " suspects".<???>
+" suspects".sub!(" ","the usual ")
 # => "the usual suspects"
 
-# "The case of the disappearing last letter".<???>
+"The case of the disappearing last letter".chop
 # => "The case of the disappearing last lette"
 
-# "The mystery of the missing first letter".<???>
+"The mystery of the missing first letter".<???>
 # => "he mystery of the missing first letter"
 
-# "Elementary,    my   dear        Watson!".<???>
+"Elementary,    my   dear        Watson!".squeeze(" ")
 # => "Elementary, my dear Watson!"
 
-# "z".<???>
+"z".ljust(4,'122')
+"z122".slice("122")
 # => 122 
-# (What is the significance of the number 122 in relation to the character z?)
+# (What is the significance of the number 122 in relation to the character z?) The number 122 in relation to character z is the new string that is printed if the integer (first parameter) is greater than the length of the "z" string. Which is true in this case.
 
-# "How many times does the letter 'a' appear in this string?".<???>
+"How many times does the letter 'a' appear in this string?".count "a"
 # => 4
