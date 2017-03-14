@@ -4,40 +4,114 @@
 # When there's more than one suspect who could have
 # committed the crime, add additional calls to prove it.
 
-"iNvEsTiGaTiOn".swapcase
+#"iNvEsTiGaTiOn".swapcase
 #=> “InVeStIgAtIoN”
+def switch (string)
+  puts string.swapcase
+end
+
+p switch("Hello Jello")
 
 
- "zom".squeeze("zoom")
+
+#"zom".squeeze("zoom")
 # => “zoom”
+def squeeze(full_string,string)
+  puts full_string.squeeze(string)
+end
 
-"enhance".lstrip!
-"enhance".rstrip!
+p squeeze("boom","bom")
+
+
+
+#"enhance".lstrip!
+#"enhance".rstrip!
 # => "    enhance    "
+def strip(string)
+  puts string.lstrip
+end
 
-"Stop! You’re under arrest!".upcase
+p strip(" Hey")
+
+
+
+#"Stop! You’re under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
+def upcase(string)
+  puts string.upcase
+end
+
+p upcase("spring forward")
 
 
-"the usual".chomp!("suspects")
+
+#"the usual".chomp!("suspects")
 #=> "the usual suspects"
+def chomp(string,remove)
+  puts string.chomp(remove)
+end
 
-" suspects".sub!(" ","the usual ")
+p chomp("Monday","day")
+
+
+
+#" suspects".sub!(" ","the usual ")
 # => "the usual suspects"
+def sub(string,old, replace)
+  puts string.sub(old,replace)
+end
 
-"The case of the disappearing last letter".chop
+p sub("Tom Tom Cat","Tom","Big")
+
+
+
+
+#"The case of the disappearing last letter".chop
 # => "The case of the disappearing last lette"
+def chop(string)
+  puts string.chop
+end
 
-"The mystery of the missing first letter".<???>
+p chop("Pizza")
+
+
+
+#"The mystery of the missing first letter"[1,38]
 # => "he mystery of the missing first letter"
+def first_letter(string,start,length)
+  puts string[start,length]
+end
 
-"Elementary,    my   dear        Watson!".squeeze(" ")
+p first_letter("Time for bed",1,11)
+
+
+
+
+#"Elementary,    my   dear        Watson!".squeeze(" ")
 # => "Elementary, my dear Watson!"
+def tighten(string,range)
+  puts string.squeeze(range)
+end
 
-"z".ljust(4,'122')
-"z122".slice("122")
+p tighten("French  Toast  for  breakfast"," ")
+
+
+
+#"z".ljust(4,'122')
+#"z122".slice("122")
 # => 122 
-# (What is the significance of the number 122 in relation to the character z?) The number 122 in relation to character z is the new string that is printed if the integer (first parameter) is greater than the length of the "z" string. Which is true in this case.
+# (What is the significance of the number 122 in relation to the character z?) The string "122" in relation to string "z" is to be printed immediately behind if the integer (first parameter, 4 in this case) is greater than the length of the "z" string. Which is true in this case.
+def justify(string,integer,new_string)
+  puts string.ljust(integer,new_string)
+end
 
-"How many times does the letter 'a' appear in this string?".count "a"
+p justify("me",5,"you")
+
+
+#"How many times does the letter 'a' appear in this string?".count "a"
 # => 4
+def count(string,input)
+  puts string.count input
+end
+
+p count("Charlotte has all four seasons in one day","o")
