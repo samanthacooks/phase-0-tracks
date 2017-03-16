@@ -11,16 +11,6 @@ march_saturdays.each_with_index {|x,y|
   if date == x
     puts "#{y}"
   else
-    puts nil
+    puts "nil"
   end
 }
-end
-
-
-
-
-
-# march_saturdays.each do |x| 
-# march_saturdays.include?(date)
-# if true
-#   puts march_saturdays[index]
