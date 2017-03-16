@@ -1,21 +1,88 @@
-puts "hello fake"
- actor_holly = [ "lee", "brad", "andy", "scarllet"]
- actors = { "lee" => "cradle to the grave", "brad" => "mr. & mrs. Smith", "andy" => "godfatherIII" }
-  
 
 
-#actor_holly.each { |x| puts "#{x} TEST"}
-#actors.each { |x| puts "#{x} TEST"}
+actor_holly = [ "lee", "brad", "andy", "scarllet"]
+actors = { "lee" => "cradle to the grave", "brad" => "mr. & mrs. Smith", "andy" => "godfatherIII", "scarllett" => "x-men"}
+    
+# #iterating array using .each
+# def inter_each(actor_holly)
+#   actor_holly.each { |x| puts "#{x} TEST"}
+# end
+# p inter_each(actor_holly)
 
-#actor_holly.map! { |x| puts "#{x} film"}
-#actors.map {|x| puts "#{x} film"}
+# #iterating  hash using .each
+# def inter_actors(actors)
+#   actors.each { |x| puts "#{x} TEST"}
+# end
+# p inter_actors(actors)
 
-#actor_holly.delete_if { |x| x.length > 4 }
-#p actor_holly
-#actors.delete_if { |x, y| y.length > 15 }
-#p actors
-#actor_holly.select! {|x| x =~ /["e"]/ } 
-#actors.select! {|x, y| y =~ /["a"]/ }
-#actor_holly.keep_if {|x| x =~ /["e"]/ }
-#actors.keep_if {|x,y| y =~ /["a"]/ }
-actor_holly.take_while {|x| x.slice(2) }
+# #iterating using .map!
+# def inter_bang(actor_holly)
+#     actor_holly.map! { |x| puts "#{x} film"}
+# end
+# p inter_bang(actor_holly)
+
+# #iterating a hash using map , as on Hashes we don't use map! 
+# def inter_nobang(actors)
+#     actors.map {|x| puts "#{x} film"}
+# end
+# p inter_nobang(actors)
+
+
+
+
+
+# #iterate array deleting any item that meets a certain condition
+# if actor_holly.delete_if { |x| x.length > 4 }
+#   p actor_holly
+# else
+# end
+
+
+
+# #iterate hash deleting any item that meets a certain condition
+# if actors.delete_if { |x, y| y.length > 15 }
+#   p actors
+# else
+# end
+
+
+# #iterate array filtering items that only meets a certain condition
+# if actor_holly.select! {|x| x =~ /["l"]/ } 
+#   p actor_holly
+# else
+# end
+
+
+# #iterate hash filtering items that only meets a certain condition
+# if actors.select! {|x, y| y =~ /["o"]/ }
+#   p actors
+# else
+# end
+
+
+# #iterate array with another method filtering items that only meets a certain condition
+# if actor_holly.keep_if {|x| x =~ /["d"]/ }
+#   p actor_holly
+# else
+# end
+
+
+# #iterate hash with another method filtering items that only meets a certain condition
+# if actors.keep_if {|x,y| y =~ /["e"]/ }
+#   p actors
+# else
+# end
+
+
+#iterate array removing items from structure until condition is false
+if actor_holly.take_while[2] {|x| x < 3}
+  p actor_holly
+else
+end
+
+
+# #iterate hash removing items from structure until condition is false
+# if actors.index{|x,y| y ==  "mr. & mrs. Smith"}
+#   p actors
+# else
+# end
