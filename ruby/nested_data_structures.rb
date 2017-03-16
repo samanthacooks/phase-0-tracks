@@ -15,10 +15,6 @@ suitcase = {
         "shirt"],
       dirty_clothes: [
       ],
-      jewelry: {
-        pair_of_earrings: 3,
-        necklaces: 2
-      }
    },
    shoe_bag: {
       shoes: [
@@ -30,3 +26,10 @@ suitcase = {
    }
 }
 
+p suitcase[:shoe_bag][:shoes][1]
+
+p suitcase[:toiletry_bag][:makeup_bag]
+
+p suitcase[:clothing_bag][:clean_clothes].reverse
+
+p suitcase[:shoe_bag][:socks][0].upcase
