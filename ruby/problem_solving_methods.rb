@@ -1,3 +1,4 @@
+#RELEASE 0
 #Creating a method that asks for user input and sets it equal to a variable
 #Check to see if the variable is in the array using .include?
 #If it returns true, print the index. If it returns false, print nil
@@ -15,8 +16,7 @@ march_saturdays.each_with_index {|x,y|
   end
 }
 
-# Release 1
-
+# RELEASE 1
 # Begin with array with 0, 1
 # Create fibonacci method to add additional numbers to array
 # Print array
@@ -47,6 +47,8 @@ end
 
 fib(input)
 
+
+#RELEASE @
 #Create a program that takes an array of integers and sorts them accordingly
 #Create an array with at least 4 integer inputs
 #Use bubble method to sort said array from smallest to largest
