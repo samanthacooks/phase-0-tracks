@@ -46,3 +46,28 @@ def fib(input)
 end
 
 fib(input)
+
+#Create a program that takes an array of integers and sorts them accordingly
+#Create an array with at least 4 integer inputs
+#Use bubble method to sort said array from smallest to largest
+
+fave_numbers = [11, 4, 24, 32]
+
+def bubble_sort(array)
+  n = array.length
+  loop do
+  swapped = false
+
+  (n-1).times do |x|
+    if array[x] > array[x + 1]
+      array[x], array[x + 1] = array[x + 1], array[x]
+      swapped = true 
+    end
+  end
+break unless swapped
+end
+array
+end
+
+
+p bubble_sort(fave_numbers)
