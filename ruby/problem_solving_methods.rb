@@ -16,6 +16,7 @@ march_saturdays.each_with_index {|x,y|
   end
 }
 
+
 # RELEASE 1
 # Begin with array with 0, 1
 # Create fibonacci method to add additional numbers to array
@@ -46,6 +47,7 @@ def fib(input)
 end
 
 fib(input)
+
 
 
 #RELEASE 2
