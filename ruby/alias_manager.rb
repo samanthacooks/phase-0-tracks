@@ -10,7 +10,7 @@ puts "Would you like an alias? [y/quit]"
 perform = gets.chomp
 
 
-until perform = "quit"
+until perform == "quit"
 
 
 puts "What is your first name?"
@@ -22,7 +22,8 @@ last_name = gets.chomp
 
 spy_name = [first_name,last_name]
 
- user_input = user_input.new
+ user_input = []
+  user_input.push(spy_name)
  
 spy_name[0],spy_name[1] = spy_name[1],spy_name[0]
 
@@ -31,28 +32,42 @@ puts spy_name
 
 
 
-# def vowel_update(x)
-# vowels = ["a", "e", "i", "o", "u"]
+# vowel next
+
+vowels = ["a", "e", "i", "o", "u"]
 
 
 spy_name = spy_name.split(" ")
 
 spy_name.map! do |x|
-if spy_name.include?(vowels) do 
-  spy_name(x).(vowels) {|x| x = vowels.next} 
-end
+if spy_name.include?(vowels){|x| x = vowels.next} 
+  p spy_name
+else
+  p spy_name
 end
 new_spy_name = spy_name.join(" ")
 end
 
-p vowel_update(spy_name)
 
 
 
+# consonant next
 
-def constanent_update(x)
-  alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+consonant = ["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z"]
+
+new_spy_name = new_spy_name.split(" ")
+new_spy_name.map! do |x|
+if new_spy_name.include?(consonant) {|x| x = consonant.next} 
+else
+  p new_spy_name
+end
+final_spy_name = new_spy_name.join(" ")
 end
 
 
+ alias_input = []
+  alias_input.push = final_spy_name
+
 end
+
+puts "#{alias_input} is actually know as #{user_input}"
