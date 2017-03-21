@@ -55,13 +55,31 @@ class Pizza
     "#{type_of_topping} pizza"
   end
 
+def pizza_loop(integer)
+  array = []
+  pizza_instances = 0
+ until pizza_instances == integer
+   new_instance = Pizza.new
+   array << new_instance
+   pizza_instances += 1
+ end
+ p array
+end
+
 end
 
 
-until 
 Food = Pizza.new
 
-p Food.bake_time(20)
-p Food.topping("cheese")
+Food.pizza_loop(50)
+
+# def 
+# until pizza_instances == 50
+# pizza_instances = []
+# pizza_instances = 50.times.collect {Pizza.new(50)}
+
+
+# p Food.bake_time(20)
+# p Food.topping("cheese")
 
 
