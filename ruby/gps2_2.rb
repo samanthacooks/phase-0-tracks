@@ -8,21 +8,44 @@
   # print the list to the console [can you use one of your other methods here?]
 # output: hash
 
-def new_list(shopping_list)
+def new_list(shopping_list,quantity)
 
  list = shopping_list.split(' ')
  final_list = {}
 
  list.each do |x|
-  final_list[x] = 1
+  final_list[x] = quantity
  end
  
  final_list
 end
 
-shopping_list = "carrots apples cereal pizza"
+shopping_list = "lemonade tomatoes onions icecream"
+quantity = 2, 3, 1, 4
 
-completed_list = new_list(shopping_list)
+complete_list = new_list(shopping_list,quantity)
+
+p complete_list
+
+
+
+# Method to update quantities
+# input: list, item name, and optional quantity
+# steps:
+  # define method for updated list
+  # use to add new key and value to hash
+# output: hash with new item
+
+# def quan_grocery_list(complete_list, quantity)
+# complete_list.each_value[x] = quantity[x]
+# complete_list
+# end
+
+# quantity = 2, 3, 1, 4
+# completed_list = quan_grocery_list(complete_list,quantity)
+
+# p completed_list
+
 
 
 
@@ -57,39 +80,33 @@ updated_list.delete(delete_item)
 updated_list
 end
 
-p deleted_grocery_list = delete_grocery_list(updated_list,"banana")
+deleted_grocery_list = delete_grocery_list(updated_list,"lemonade")
 
 
 
 
 # Method to update the quantity of an item
-# input:
-# steps:
-# output:
+# input: deleted_grocery_list, this_item, new_quantity 
+# steps: feed into item who's quantity needs to be updated and set equal to new quantity
+# output: new hash with updated item value
 
-def value_grocery_list(deleted_grocery_list,old_value, old_quantity,new_quantity)
-
-if deleted_grocery_list.include?(old_value) do |old_value,new_quantity|
-  old_quantity = new_quantity
-  puts deleted_grocery_list
-  end
-  else
-end
+def value_grocery_list(deleted_grocery_list, this_item, new_quantity)
+deleted_grocery_list[this_item] = new_quantity
+deleted_grocery_list
 end
 
+valued_grocery_list = value_grocery_list(deleted_grocery_list, "icecream", 1)
 
-# deleted_grocery_list.update(deleted_grocery_list) {|old_value,new_quantity| new_quantity +=1}
-# deleted_grocery_list
-# end
 
-valued_grocery_list = value_grocery_list(deleted_grocery_list,"apples", 1, 3)
 
 
 # Method to print a list and make it look pretty
-# input:
-# steps:
-# output:
+# input: valued_grcoery_list
+# steps: iterate each item and quantity in hash to print in a sentence
+# output: printed grocery list
 
-
-valued_grocery_list.each do |key,value| puts "I need a quantity of #{value} #{key}(s)"
+def printed_list(valued_grocery_list)
+valued_grocery_list.each {|key,value| puts "I need a quantity of #{value} #{key}(s)"}
 end
+
+pretty_list = printed_list(valued_grocery_list)
