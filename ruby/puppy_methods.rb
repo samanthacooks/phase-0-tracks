@@ -43,8 +43,8 @@ p Fido.play_dead()
 
 class Pizza
 
-  def initialize()
-     puts "Initializing new pizza instance..."
+  def initialize
+     # puts "Initializing new pizza instance..."
   end
 
   def bake_time(minutes)
@@ -55,31 +55,30 @@ class Pizza
     "#{type_of_topping} pizza"
   end
 
-def pizza_loop(integer)
-  array = []
-  pizza_instances = 0
- until pizza_instances == integer
-   new_instance = Pizza.new
-   array << new_instance
-   pizza_instances += 1
- end
- p array
-end
 
 end
 
 
-Food = Pizza.new
 
-Food.pizza_loop(50)
-
-# def 
-# until pizza_instances == 50
-# pizza_instances = []
-# pizza_instances = 50.times.collect {Pizza.new(50)}
+pizzas = []
 
 
-# p Food.bake_time(20)
-# p Food.topping("cheese")
 
+50.times do
+  pizzas << Pizza.new  
+end
+
+
+
+pizzas.each do
+bake_time(20)
+end
+
+
+p bake(pizzas)
+
+
+food = Pizza.new
+p food.bake_time(20)
+p food.topping("cheese")
 
