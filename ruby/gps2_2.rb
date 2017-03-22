@@ -13,8 +13,8 @@ def new_list(shopping_list,quantity)
  list = shopping_list.split(' ')
  final_list = {}
 
- list.each do |x|
-  final_list[x] = quantity
+ list.each_with_index do |x,i|
+  final_list[x] = quantity[i]
  end
  
  final_list
@@ -22,29 +22,11 @@ end
 
 shopping_list = "lemonade tomatoes onions icecream"
 quantity = 2, 3, 1, 4
+p quantity
+completed_list = new_list(shopping_list,quantity)
 
-complete_list = new_list(shopping_list,quantity)
+p completed_list
 
-p complete_list
-
-
-
-# Method to update quantities
-# input: list, item name, and optional quantity
-# steps:
-  # define method for updated list
-  # use to add new key and value to hash
-# output: hash with new item
-
-# def quan_grocery_list(complete_list, quantity)
-# complete_list.each_value[x] = quantity[x]
-# complete_list
-# end
-
-# quantity = 2, 3, 1, 4
-# completed_list = quan_grocery_list(complete_list,quantity)
-
-# p completed_list
 
 
 
@@ -63,7 +45,7 @@ completed_list
 end
 
 updated_list = new_grocery_list(completed_list,"banana", 2)
-
+p updated_list
 
 
 
@@ -81,7 +63,7 @@ updated_list
 end
 
 deleted_grocery_list = delete_grocery_list(updated_list,"lemonade")
-
+p deleted_grocery_list
 
 
 
@@ -96,7 +78,7 @@ deleted_grocery_list
 end
 
 valued_grocery_list = value_grocery_list(deleted_grocery_list, "icecream", 1)
-
+p valued_grocery_list
 
 
 
@@ -110,3 +92,13 @@ valued_grocery_list.each {|key,value| puts "I need a quantity of #{value} #{key}
 end
 
 pretty_list = printed_list(valued_grocery_list)
+p pretty_list
+
+
+
+# From working this challenge I learned that psuedocode is more useful when using the template format given in the challenge. Usually, I write a title and then each detailed step but adding the input and output categories were a great help.
+# The trade-off of using arrays and hashes for this challenge is that it was easier to manipulate the data since it was a list. Arrays and hashes are essentially formatted data lists.
+# A method returns an updated output of the input data, based on whatever condition is specified in it's block
+# Strings, integers, arrays, and hashes can be passed as arguments in a method
+# You can pass information between methods by creating a variable that is defined by a called method (and argument(s)), then using this new variable within a subsequent method. This is an inadvertent way of nesting a method within another method.
+# In this challenge, the concept of nesting a method within another by the use of variables was solidified. As well as how to create methods with various kinds of parameters. Unfortunately, I'm still having confusion about changing data within arrays and hashes. I will make sure to research these topics more before digging too deep into this week's work
