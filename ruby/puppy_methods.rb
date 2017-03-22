@@ -44,7 +44,6 @@ p Fido.play_dead()
 class Pizza
 
   def initialize
-     # puts "Initializing new pizza instance..."
   end
 
   def bake_time(minutes)
@@ -55,14 +54,11 @@ class Pizza
     "#{type_of_topping} pizza"
   end
 
-
 end
 
 
 
 pizzas = []
-
-
 
 50.times do
   pizzas << Pizza.new  
@@ -70,15 +66,9 @@ end
 
 
 
-pizzas.each do
-bake_time(20)
+pizzas.each do |thing|
+thing.bake_time(30)
+thing.topping("onions")
 end
 
-
-p bake(pizzas)
-
-
-food = Pizza.new
-p food.bake_time(20)
-p food.topping("cheese")
 
