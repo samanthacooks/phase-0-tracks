@@ -14,6 +14,11 @@ We will not be exploring all of the features that JavaScript provides. This guid
 - [Conditions and Logic](7_conditions_and_logic.md)
 - [If Statements](8_if_statements.md)
 - [Array Basics](9_array_basics.md)
+- [Array Operations](10_array_operations.md)
+- [Object Literals](11_object_literals.md)
+- [Looping Basics](12_looping_basics.md)
+- [Looping Through Arrays](13_looping_through_arrays.md)
+- [Each, Map, Select, and Max](14_each_map_select_max.md)
 
 #### Core References
 
