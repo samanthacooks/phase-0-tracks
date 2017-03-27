@@ -1,0 +1,13 @@
+Word Guess Game
+
+Use a class for a word guess game code. Create a driver code to connect human logic to computer logic by creating readable variables, instances, and methods.
+
+
+INPUT: user 1 word to guess, user 2 guess what the word is by letter
+STEPS: 
+1. create a class to categorize user 1’s choice of word for user 2 to guess 
+2. create an until loop to prompt user 2 to guess the word, letter by letter with the maximum number of attempts == the length of the word
+3. replace every letter of the guessed word with “_” after user 2 is prompted to begin guessing the word by using gsub 
+4. if a correct letter is guessed replace the “_” with the correct letter using index string function 
+5. repeated guesses of the same word will not count against user
+OUTPUT: after loop is done (or if user guesses word correctly), give a congrats message. If guessed wrong give taunting message
