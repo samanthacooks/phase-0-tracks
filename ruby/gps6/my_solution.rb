@@ -72,3 +72,9 @@ state_name.virus_effects
 end
 #=======================================================================
 # Reflection Section
+# 
+# 1. In the state data file, the hash syntax between the state name as key and it's population data hash as value uses a rocket. This is correct since the rocket syntax keeps both objects as they are, string and a hash. Inside the population data hash, they symbol syntax is used. This automatically converts the population density and population keys into symbols with the same id. This helps the program to run more efficiently and makes for a cleaner code.
+# 2. Require relative links a test file to a class file for rspec testing. Require links a module to a class.
+# 3. A couple ways to iterate through a hash are to use the .each and .times methods. Each is best used to perform a function once across inputs of an entire hash. Times is better used to perform an operation any set number of times against a hash.
+# 4. When refactoring virus effects, realizing that calling the instance variables in the predicted deaths and speed of spread variables was unnecessary stood out. I definitely could understand the frame of thinking for calling these variables when writing the code. Only during refactoring the finished code would one realize how repetitive this was. 
+# 5. This challenge, I most definitely solidified refactoring. There were so many things I had not thought about doing when first learning this concept in the challenge last week that my mind was opened up to during the gps this week. Great lesson!
