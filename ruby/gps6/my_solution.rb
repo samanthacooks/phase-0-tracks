@@ -73,6 +73,10 @@ end
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
+#INPUT: STATE_DATA hash
+#STEPS:
+# 1. Iterate through the hash 51 times for each state name by using each
+#OUTPUT: VirusPredicter instance for each state with state name, population density, and population 
 
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 alabama.virus_effects
@@ -85,6 +89,13 @@ california.virus_effects
 
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
+
+
+
+STATE_DATA.each do|state_name,population_data| 
+state_name = VirusPredictor.new(state_name, population_data[:population_density], population_data[:population])
+state_name.virus_effects
+end
 
 
 #=======================================================================
