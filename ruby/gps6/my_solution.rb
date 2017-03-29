@@ -3,19 +3,21 @@
 # I worked on this challenge [by myself, with: ].
 # We spent [#] hours on this challenge.
 
-# EXPLANATION OF require_relative
+# EXPLANATION OF require_relative: links test file to the class file for rspec testing
 #
 #
 require_relative 'state_data'
 
 class VirusPredictor
 
+# for each new instance of a class, sets the 3 below parameters 
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+# define predicted deaths and speed of spread using instance parameters as direct output
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
@@ -23,6 +25,7 @@ class VirusPredictor
 
   private
 
+# outputs the predicted number of deaths for each state due to outbreak using all instance parameters
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -41,6 +44,7 @@ class VirusPredictor
 
   end
 
+# outputs the speed of spread for each state using the population density and state parameters
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
