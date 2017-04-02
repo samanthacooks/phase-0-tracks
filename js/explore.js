@@ -2,8 +2,10 @@
 // INPUT: a string (variable)
 // STEPS:
 //  1. Declare a variable with string hello
-//  2. Create a loop function with index of 0, set index to loop as long as it is less than the string length, set the index counter to 1 using i++
-//  3. Print the console log in the function to print each character backwards using 
+//  2. Declare a placeholder variable in the function for the reversed word
+//  3. Create a loop function with index of the string length (minus one), set index to greater than or equal to the string length, set the index counter to 1 using i--
+//  4. Set increment command to print each character of string reverse, using the index into the backwards placeholder variable
+//  5. Return backwards variable string value
 
 
 var string = "Hello";
