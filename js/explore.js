@@ -10,15 +10,15 @@ var string = "Hello";
 
 
 function reverseString(string){
-  // if (4 == 4){
+  if (4 == 4){
     var backwards = "";
       for (var i = string.length - 1; i >= 0; i--)
       backwards += string[i];
-return backwards;
-  // }
-// else {
-//   return console.log("Nothing to say or do.")
-// }
+      return backwards;
+  }
+  else {
+  return console.log("Nothing to say or do.")
+  }
 }
 
 
