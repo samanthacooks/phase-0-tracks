@@ -29,11 +29,35 @@ function longestInput(array){
 console.log(longestInput(array))
 
 
-// RELEASE 2
+// RELEASE 1
 // Create a function that compares two objects checking for one shared key-value pair
 // INPUT: two objects with the same amount of key-value pairs
 // STEPS:
 //  1. Create a function separates the keys and values of each object
-//  2. Iterate over both the key array and value array for marched values 
-//  3. Use math.max to return the property with the highest value
+//  2. Iterate over both the key array and value array for matched values 
+//  3. Create a conditional statement comparing both arrays returning true or false based on result
 // OUTPUT: true or false
+
+obj_1 = {name: "Sam", age: 28, gender: "female", mom: "Anna"}
+obj_2 = {name: "Shawn", age: 24, gender: "male", mom: "Anna", college: "USC"}
+
+function compareObjects(obj_1, obj_2){
+  var keys1 = Object.keys(obj_1);
+  var keys2 = Object.keys(obj_2);
+  var values1 = Object.values(obj_1);
+  var values2 = + Object.values(obj_2);
+  return keys
+}
+
+console.log(compareObjects(obj_1,obj_2))
+
+
+
+// RELEASE 2
+// Create a function that takes an integer for length and returns an array of string of given length
+// INPUT: integer for length of array
+// STEPS:
+//  1. Create a function that creates an array of specified length
+//  2.  
+//  3. 
+// OUTPUT: array with specified length (amount of integers)
