@@ -64,3 +64,10 @@ console.log(compareObjects(obj_1,obj_2))
 //  2.  
 //  3. 
 // OUTPUT: array with specified length (amount of integers)
+
+length = 3
+
+function(length){
+  var array = [];
+
+}
