@@ -46,7 +46,10 @@ function compareObjects(obj_1, obj_2){
   var keys2 = Object.keys(obj_2);
   var values1 = Object.values(obj_1);
   var values2 = + Object.values(obj_2);
-  return keys
+  if (keys1 = keys2 && values1 = values2)
+    {return true};
+  else
+    {return false};
 }
 
 console.log(compareObjects(obj_1,obj_2))
