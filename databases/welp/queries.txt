@@ -1,12 +1,11 @@
 NUMBER 2
-sqlite> SELECT businesses.name, users.firstname, users.lastname, reviews.comments, reviews.stars
-   ...> FROM reviews
-   ...> JOIN businesses ON reviews.business_id = businesses.id
-   ...> JOIN users ON reviews.user_id = users.id;
+sqlite> SELECT * FROM reviews, businesses, users 
+   ...> WHERE reviews.business_id = businesses.id
+   ...> AND reviews.user_id = users.id;
 
-Pizzaria|Angela|Jolie|Good pizza, quick service|5
-Parlor|Holly|Berry|Slow service and no snacks|1
-Store|Bradford|Pitt|Clean store but no cashiers at registers|3
+1|3|Good pizza, quick service|5|1|Pizzaria|3|Angela|Jolie
+2|5|Slow service and no snacks|1|2|Parlor|5|Holly|Berry
+3|1|Clean store but no cashiers at registers|3|3|Store|1|Bradford|Pitt
 
 
 
@@ -20,6 +19,7 @@ sqlite> SELECT businesses.name, users.firstname, users.lastname, reviews.comment
 Pizzaria|Angela|Jolie|Good pizza, quick service|5
 Parlor|Holly|Berry|Slow service and no snacks|1
 Store|Bradford|Pitt|Clean store but no cashiers at registers|3
+
 
 
 
