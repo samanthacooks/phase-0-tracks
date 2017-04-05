@@ -1,0 +1,33 @@
+NUMBER 2
+sqlite> SELECT businesses.name, users.firstname, users.lastname, reviews.comments, reviews.stars
+   ...> FROM reviews
+   ...> JOIN businesses ON reviews.business_id = businesses.id
+   ...> JOIN users ON reviews.user_id = users.id;
+
+Pizzaria|Angela|Jolie|Good pizza, quick service|5
+Parlor|Holly|Berry|Slow service and no snacks|1
+Store|Bradford|Pitt|Clean store but no cashiers at registers|3
+
+
+
+
+NUMBER 3
+sqlite> SELECT businesses.name, users.firstname, users.lastname, reviews.comments, reviews.stars
+   ...> FROM businesses, users, reviews
+   ...> WHERE reviews.business_id = businesses.id                        
+   ...> AND reviews.user_id = users.id;
+
+Pizzaria|Angela|Jolie|Good pizza, quick service|5
+Parlor|Holly|Berry|Slow service and no snacks|1
+Store|Bradford|Pitt|Clean store but no cashiers at registers|3
+
+
+
+NUMBER 4
+sqlite> SELECT businesses.name, users.firstname, users.lastname, reviews.comments, reviews.stars
+   ...> FROM businesses, users, reviews                                          
+   ...> WHERE reviews.business_id = businesses.id
+   ...> AND reviews.user_id = users.id                                           
+   ...> AND business_id=2;
+
+Parlor|Holly|Berry|Slow service and no snacks|1
