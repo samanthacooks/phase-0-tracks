@@ -7,3 +7,11 @@
 # Require all gems
 require 'day-planner'
 
+
+#  Create the database
+db = SQLite3::Database.new("day-planner.db")
+
+
+# Create the table with string delimiter
+create_table_cmd = <<-SQLite3
+  CREATE TABLE IF NOT EXISTS 
