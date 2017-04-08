@@ -4,9 +4,10 @@
 
 
 # Require all gems
-require 'day-planner'
-require_relative 'day-planner'
+require "sqlite3"
+require_relative "day-planner.rb"
 
+db = new_database
 
 #Introduce program to user and start asking for user input
 
@@ -21,4 +22,4 @@ plan_day = gets.chomp
     weekday = true
   end
 
-  create_days(plan_day,weekday)
+  create_days(db,plan_day,weekday)
