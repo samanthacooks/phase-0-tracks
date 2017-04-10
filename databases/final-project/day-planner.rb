@@ -34,9 +34,7 @@ create_day_table = <<-SQL
     day_id INT,
     name VARCHAR(255),
     hours INT,
-    other_task_id INT,
-    FOREIGN KEY (day_id) REFERENCES days_of_week(id),
-    FOREIGN KEY (other_task_id) REFERENCES other_tasks(id)
+    FOREIGN KEY (day_id) REFERENCES days_of_week(id)
   )
   SQL
 
@@ -46,9 +44,7 @@ create_day_table = <<-SQL
     day_id INT,
     name VARCHAR(255),
     hours INT,
-    other_task_id INT,
-    FOREIGN KEY (day_id) REFERENCES days_of_week(id),
-    FOREIGN KEY (other_task_id) REFERENCES other_tasks(id)
+    FOREIGN KEY (day_id) REFERENCES days_of_week(id)
   )
   SQL
 
@@ -131,14 +127,22 @@ db.execute(create_weekend_task_table)
     db.execute("SELECT * FROM weekend_tasks")
   end
 
-  def add_other_task_to_weekday(db,other_task_id,day)
-    db.execute("INSERT INTO weekday_tasks (other_task_id) VALUES (?)",[other_task_id])
+  def add_other_task_to_weekday(db, task_id)
+    db.execute("INSERT INTO weekend_tasks (name, hours) SELECT name, hours FROM tasks WHERE tasks.id=(?)",[task_id])
     db.execute("SELECT * FROM weekday_tasks")
   end
 
-  def add_other_task_to_weekend(db,other_task_id)
-    db.execute("INSERT INTO weekend_tasks (other_task_id) VALUES (?)",[other_task_id])
+  def add_other_task_to_weekend(db, task_id)
+    db.execute("INSERT INTO weekend_tasks (name, hours) SELECT name, hours FROM tasks WHERE tasks.id=(?)",[task_id])
     db.execute("SELECT * FROM weekend_tasks")
+  end
+
+  def print_weekday(db)
+    db.execute("SELECT name, hours FROM weekday_tasks")
+  end
+
+  def print_weekend(db)
+    db.execute("SELECT name, hours FROM weekend_tasks")
   end
 
   #Introduce program to user and start asking for user input
@@ -178,36 +182,52 @@ to_be_planned.each do |key,value|
 end
 
 day_to_be_updated = ""
-until day_to_be_updated = "no"
-p "Do you need to add a task to one of these days? If yes, enter which day. If not, enter 'no'."
+until day_to_be_updated == "done" 
+clear_task_table(db)
+p "Do you need to add a task to one of these days? If yes, enter which day then see below for task table. If not, enter 'done'."
 day_to_be_updated = gets.chomp
-
-if to_be_planned.has_value?(day_to_be_updated) 
-  task_to_add = ""
-  until task_to_add == "done"
-  p "See below for table of other tasks to be added. Select number of task you would like to add to today. If no more, enter 'done'."
-  p other_tasks(db)
+p other_tasks(db)
+  p "Select number of task you would like to add to today."
   task_to_add = gets.chomp
-    if real_week_days.include? day_to_be_updated
+   if (to_be_planned.include? day_to_be_updated) && (real_week_days.include? day_to_be_updated)
+      p "Your new schedule for #{day_to_be_updated} is:"
       p add_other_task_to_weekday(db,task_to_add)
-    else real_weekend_days.include? day_to_be_updated
+   else (to_be_planned.include? day_to_be_updated) && (real_weekend_days.include? day_to_be_updated)
+      p "Your new schedule for #{day_to_be_updated} is:"
       p add_other_task_to_weekend(db,task_to_add)
-    end
   end
-else
+end
+ 
+
+# day_to_be_deleted_from = ""
+# until day_to_be_deleted_from == "done" 
+# p "Do you need to delete a task to one of these days? If yes, enter which day. If not, enter 'done'."
+# day_to_be_deleted_from = gets.chomp
+# p 
+#   p "Select number of task you would like to delete today."
+#   task_to_delete = gets.chomp
+#    if (to_be_planned.include? day_to_be_deleted_from) && (real_week_days.include? day_to_be_deleted_from)
+#       p "Your new schedule for #{day_to_be_updated} is:"
+#       p add_other_task_to_weekday(db,task_to_add)
+#    else (to_be_planned.include? day_to_be_deleted_from) && (real_weekend_days.include? day_to_be_deleted_from)
+#       p "Your new schedule for #{day_to_be_updated} is:"
+#       p add_other_task_to_weekend(db,task_to_add)
+#   end
+# end
+
+
+p "We've finalized your schedule! See below."
+
+to_be_planned.each do |key,value|
+  if real_week_days.include? value
+    p "For the day of #{value}, your schedule is:"
+    p print_weekday(db)
+  else 
+    real_weekend_days.include? value
+    p "For the day of #{value}, your schedule is:"
+    p print_weekend(db)
+  end
 end
 
-end
-
-p "Please be warned that the below days have a task duration of over 24 hours for the day. I know, we all wish we could have more than 24 hours in a day."
-
-
-
-
-# need to add if statements to add other tasks to the specified set tasks for the weekend and weekday. 
-# need to add a method to delete a tasks from the set tasks for weekend and weekday
-# develop a method that sums up the values of the hours in the task hash, then warns user about being over 24 hours
-# print final version of days with planned tasks (maybe print in a sentence too)
-# finalize code
 
 
