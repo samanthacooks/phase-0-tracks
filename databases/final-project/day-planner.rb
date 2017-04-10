@@ -181,8 +181,8 @@ to_be_planned.each do |key,value|
   end
 end
 
-day_to_be_updated = ""
-until day_to_be_updated == "done" 
+
+
 clear_task_table(db)
 p "Do you need to add a task to one of these days? If yes, enter which day then see below for task table. If not, enter 'done'."
 day_to_be_updated = gets.chomp
@@ -196,8 +196,9 @@ p other_tasks(db)
       p "Your new schedule for #{day_to_be_updated} is:"
       p add_other_task_to_weekend(db,task_to_add)
   end
-end
  
+
+# Did not have time to complete delete task code block. Work in progress is below.
 
 # day_to_be_deleted_from = ""
 # until day_to_be_deleted_from == "done" 
