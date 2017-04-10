@@ -131,16 +131,6 @@ db.execute(create_weekend_task_table)
     db.execute("SELECT * FROM weekend_tasks")
   end
 
-  def print_tasks(db)
-    db.execute("SELECT * FROM day_tasks")
-    # db.execute("SELECT day_tasks.id, days_of_week.name, tasks.name, tasks.hours FROM day_tasks, days_of_week, tasks WHERE day_tasks.day_id = days_of_week.id AND day_tasks.task_id = tasks.id")
-  end
-
-  def print_(db)
-    db.execute("SELECT * FROM day_tasks")
-    # db.execute("SELECT day_tasks.id, days_of_week.name, tasks.name, tasks.hours FROM day_tasks, days_of_week, tasks WHERE day_tasks.day_id = days_of_week.id AND day_tasks.task_id = tasks.id")
-  end
-
   def add_other_task_to_weekday(db,other_task_id,day)
     db.execute("INSERT INTO weekday_tasks (other_task_id) VALUES (?)",[other_task_id])
     db.execute("SELECT * FROM weekday_tasks")
@@ -194,7 +184,7 @@ day_to_be_updated = gets.chomp
 
 if to_be_planned.has_value?(day_to_be_updated) 
   task_to_add = ""
-  until task_to_add = "done"
+  until task_to_add == "done"
   p "See below for table of other tasks to be added. Select number of task you would like to add to today. If no more, enter 'done'."
   p other_tasks(db)
   task_to_add = gets.chomp
@@ -205,6 +195,8 @@ if to_be_planned.has_value?(day_to_be_updated)
     end
   end
 else
+end
+
 end
 
 p "Please be warned that the below days have a task duration of over 24 hours for the day. I know, we all wish we could have more than 24 hours in a day."
