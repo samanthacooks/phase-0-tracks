@@ -62,12 +62,14 @@ create_day_table = <<-SQL
   )
   SQL
 
-  # Create days of week table
+  # Create all program tables
 db.execute(create_day_table)
 db.execute(create_task_table)
 db.execute(create_day_task_table)
 db.execute(create_weekday_task_table)
 db.execute(create_weekend_task_table)
+
+# Methods to perform user interface commands
 
   def clear_days_of_week_table(db)
     db.execute("DELETE FROM days_of_week")
@@ -145,7 +147,9 @@ db.execute(create_weekend_task_table)
     db.execute("SELECT name, hours FROM weekend_tasks")
   end
 
-  #Introduce program to user and start asking for user input
+
+
+  #Introduce program to user and ask for user input
 
 p "Welcome to the Sammie CBCB day planner program. Here you will be able to plan your day or week by task time durations while you are a student at DBC."
 clear_day_task_table(db)
