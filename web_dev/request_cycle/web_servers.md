@@ -8,7 +8,10 @@
         2. The system libraries: typical set of functions applications can interrelate to in the kernel
         3. The system utilities: programs that execute individual, particular, and specialize managing tasks
 
-3. A VPS (virtual private server) is a virtual computer, maintained as a service for internet hosting. Some advantages of using VPS are 
+3. A VPS (virtual private server) is a virtual computer, maintained as a service for internet hosting. Some advantages of using VPS are:
+  - It's less expensive than a physical server
+  - It can be customized to meet your need, small or large, with a price that reflects so
+  - One has more control over a vps than with shared hosting. With shared hosting, you more than likely wouldnt have root access and the ability to use particular scripts
 
 
 4. It is not good practice to stay logged in as root on a Linux system because doing so causes less security protection, making the server more susceptible to being hacked. Also when creating a new login to work on a server that's already built, programs ran under your new username are restricted from writing to the rest of the system, which minimizes your chance of damaging the system.
