@@ -12,13 +12,13 @@ header {
 }
 
 .med-header {
-border: outset;
+  border: outset;
 }
 
 .small-header {
-font-size: 98%;
-color: white;
-font-style: italic;
+  font-size: 98%;
+  color: white;
+  font-style: italic;
 }
 
 .picture {
@@ -29,4 +29,12 @@ font-style: italic;
   margin-right: auto;
   margin-bottom: 20px;
   margin-top: 20px;
+}
+
+.button {
+  margin-top: 20px;
+  width: 150px;
+  font-size: 18px;
+  color: grey;
+  font-family: trebuchetms;
 }
