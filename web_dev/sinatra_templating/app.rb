@@ -24,18 +24,21 @@ post '/students' do
   redirect '/'
 end
 
-# add static resources
-get '/students/update' do
-  erb :delete_student
-end
-
+# add a static resource
 get '/students/search' do
   erb :search
 end
 
 get '/students' do 
-  db.execute("SELECT FROM students WHERE name=(?)", [params['name']])
+  db.execute("SELECT FROM students WHERE name=#{params[:name]}")
   redirect '/'
+end
+
+
+
+# add another static resource
+get '/students/update' do
+  erb :update_student
 end
 
 # patch '/students/' do 
