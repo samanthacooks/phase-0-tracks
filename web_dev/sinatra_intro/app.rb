@@ -71,8 +71,24 @@ end
 get "/sum/:num1/add/:num2" do
  params[:num1] = params[:num1].to_i
  params[:num2] = params[:num2].to_i
- p params[:num1] + params[:num2]
+ p "#{params[:num1] + params[:num2]}"
 end
 
 
-# write a GET route that allows the user to search the database for all students below the age of 30
+# write a GET route that displays info for students over the age of 50
+
+get "/special_students" do
+  students = db.execute("SELECT * FROM students WHERE age='113'")
+  students.to_s
+end
+
+
+
+
+
+# RESEARCH ON YOUR OWN
+
+# 1. Sinatra is not the only web app library for Ruby. Others include Ruby on Rails, Merb, Nitro, and Camping.
+# 2. SQlite is not the only database compatible with Sinatra, others include Mongo, Activerecord, and Datamapper.
+# 3. A web stack is a collection of software needed for we development. This includes at minimum, an operating system
+#    a programming language, database software, and a web server.
